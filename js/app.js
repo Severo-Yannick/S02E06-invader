@@ -41,13 +41,19 @@ function createPixel() {
 // Ajout d'élement au formulaire
 function fillForm() {
   var formElement = document.querySelector(".configuration");
-  
+
   var inputElement = document.createElement("input");
   inputElement.name = "gridSize";
   inputElement.type = "number";
   inputElement.placeholder = "Taille de la grille";
   inputElement.classList.add("configuration__input");
+
+  var buttonElement = document.createElement("button");
+  buttonElement.textContent = "Valider";
+  buttonElement.classList.add("configuration__button");
+
   formElement.appendChild(inputElement);
+  formElement.appendChild(buttonElement);
 }
 
 function init() {
