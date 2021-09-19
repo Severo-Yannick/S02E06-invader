@@ -21,10 +21,19 @@ function createLine(dimension) {
   return lineElement;
 }
 
+// Changement de la couleur d'arrière plan du pixel cliqué
+function handlePixelClick(event) {
+  var clickedPixel = event.target;
+  clickedPixel.classList.toggle("pixel--dark");
+}
+
 // Création de pixels
 function createPixel() {
   var pixelElement = document.createElement("div");
   pixelElement.classList.add("pixel");
+
+  // Ajout d'un écouteur au clic sur les pixels
+  pixelElement.addEventListener('click', handlePixelClick);
 
   return pixelElement;
 }

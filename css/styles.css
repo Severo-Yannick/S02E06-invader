@@ -19,3 +19,7 @@ body {
   height: 20px;
   margin: 2px;
 }
+
+.pixel--dark {
+  background-color: rgb(72, 84, 96);
+}
