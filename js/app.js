@@ -38,4 +38,21 @@ function createPixel() {
   return pixelElement;
 }
 
-createGrid(8);
+// Ajout d'élement au formulaire
+function fillForm() {
+  var formElement = document.querySelector(".configuration");
+  
+  var inputElement = document.createElement("input");
+  inputElement.name = "gridSize";
+  inputElement.type = "number";
+  inputElement.placeholder = "Taille de la grille";
+  inputElement.classList.add("configuration__input");
+  formElement.appendChild(inputElement);
+}
+
+function init() {
+  fillForm();
+  createGrid(8);
+}
+
+init();
