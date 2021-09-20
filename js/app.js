@@ -50,6 +50,8 @@ function fillForm() {
   inputElement.name = "gridSize";
   inputElement.type = "number";
   inputElement.placeholder = "Taille de la grille";
+  inputElement.autofocus = true;
+  inputElement.min = 0;
   inputElement.classList.add("configuration__input");
 
   var buttonElement = document.createElement("button");
