@@ -23,3 +23,31 @@ body {
 .pixel--dark {
   background-color: rgb(72, 84, 96);
 }
+
+.configuration {
+  display: flex;
+  justify-content: center;
+  padding: 65px;
+  background-color: rgb(49, 72, 173);
+}
+
+.configuration__input {
+  border: none;
+  height: 3rem;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+  padding: 0.3em 0.6em;
+  font-size: 1.5em;
+  color: rgb(144, 146, 147);
+}
+
+.configuration__button {
+  border: none;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+  padding: 0.3em 0.6em;
+  font-size: 1.5em;
+  margin-left: 2px;
+  color: #fff;
+  background-color: rgb(155, 104, 228);
+}
