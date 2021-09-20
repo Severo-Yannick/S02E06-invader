@@ -1,6 +1,8 @@
 // Creation de la grille
 function createGrid(dimension) {
   var invaderDivElement = document.querySelector("#invader");
+  // On vide le contenu de la div avant la nouvelle saisie du user 
+  invaderDivElement.textContent = '';
 
   for (var i = 0; i < dimension; i++) {
     var newLineElement = createLine(dimension);
@@ -38,9 +40,11 @@ function createPixel() {
   return pixelElement;
 }
 
-// Ajout d'élement au formulaire
+// Ajout d'élements au formulaire
 function fillForm() {
   var formElement = document.querySelector(".configuration");
+  // Soumission du formulaire
+  formElement.addEventListener('submit', handleFormSubmit);
 
   var inputElement = document.createElement("input");
   inputElement.name = "gridSize";
@@ -56,9 +60,27 @@ function fillForm() {
   formElement.appendChild(buttonElement);
 }
 
+// Récupération de la donnée et Soumission du formulaire
+function handleFormSubmit(event) {
+  event.preventDefault();
+  // Recupèration du formulaire soumis
+  var submitedFormElement = event.target;
+
+  // Recupèration des sous-elements du formulaire (champs/boutons)
+  var formInputsElements = submitedFormElement.elements;
+
+  // Recupèration de l'élément contenant le champs gridSize
+  var gridSizeInputElement = formInputsElements['gridSize'];
+
+  // Recupèration la value entrée par l'utilisateur
+  var gridSize = gridSizeInputElement.value;
+
+  // Je passe en argument la taille de la grille à créer
+  createGrid(gridSize);
+}
+
 function init() {
   fillForm();
-  createGrid(8);
 }
 
 init();
